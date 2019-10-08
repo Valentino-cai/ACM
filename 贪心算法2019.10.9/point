@@ -16,6 +16,39 @@
 	②电视问题：每一次都希望尽量多搬几张，则最终能最短搬完，则类似于想看最多的节目，需要每次都选择最早结束的电影
 	  	    https://paste.ubuntu.com/p/sFJy4rxxfG/
 
+3.Tian Ji -- The Horse Racing（HDOJ1052）http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1005&ojid=0&cid=13365&hide=1&problem=Problem%20%20E
+	双向贪心：先从前开始，如果田忌的马更优，则比，如果田忌的马差，则将田忌当前最差的马与国王比（最好结果），如果相等，则需要反向，从后开始
+		 如果田忌当前最差的马比国王当前最差的马好，那就比，如果差或者相等，将该马与国王当前最好马比（注意：此时需要分开考虑金钱）
+	https://paste.ubuntu.com/p/gs5wjbTT4z/
 
-3.doing homework(HDOJ):http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1003&ojid=0&cid=13365&hide=1&problem=Problem%20%20C
-		
+4.Quoit Design（HDOJ1007）http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1007&ojid=0&cid=13365&hide=1&problem=Problem%20%20G
+	神奇的欧式距离：在本题中，原本需要求出任意两点之间的欧式距离，但是由于出题人没关注，因此只需要对其中一个坐标排序，
+		       然后将求出依序每个点前后几个点的绝对距离，选出最小的，再求出欧式距离即可
+		       https://paste.ubuntu.com/p/fp5N4CCqtJ/
+	qsort（）：     整数升序
+	    		int num[100];
+			int cmp_int(const void* _a , const void* _b)　　//参数格式固定
+			{
+			    int* a = (int*)_a;    //强制类型转换
+			    int* b = (int*)_b;
+			    return *a - *b;　　
+						}
+
+			qsort(num,100,sizeof(num[0]),cmp_int); 
+			
+			结构体排序
+			struct circle{
+				double a;double b,c,d;
+			};
+			int compare(const void * w1, const void * w2)
+ 			{
+				   return (*(struct circle *)w1).a > (*(struct circle *)w2).a ? 1 : -1;
+
+				}
+			qsort(q,n,sizeof(q[0]),compare);
+5.Frogs' Neighborhood  http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1010&ojid=1&cid=13365&hide=1&problem=Problem%20%20J
+	Havel-Hakimi定理-度序列构图：先排序，然后边数最高A的点，直接变成0，剩余的从高到低减去一（减去边数最大值A），再进行排序，循环多次
+				如果最后全部为0，则说明可以，否则不行
+	https://paste.ubuntu.com/p/G829xd8TDY/
+	
+		 

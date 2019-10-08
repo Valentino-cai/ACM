@@ -1,12 +1,78 @@
-1.Fat Mouse：http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1001&ojid=0&cid=13365&hide=1&problem=Problem%20%20A
-	        背包问题：在允许的情况下，尽量选择单位价值高的
-                   使用结构体，完成排序
-          冒泡排序： for ( j=0;j<=i;j++){
-			              for ( k=0;k<=i-j-1;k++){
-			                    	if(c[k]<c[k+1]){
-				                      	t=c[k];
-			                      		c[k]=c[k+1];
-			                      		c[k+1]=t;}}}
-2.Moving table(HDOJ1050):http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1002&ojid=0&cid=13365&hide=1&problem=Problem%20%20B
-          ①涂色问题：计算某条路被经过的次数！！！！
-          ②电视问题：每一次都希望尽量多搬几张，则最终能最短搬完，则类似于想看最多的节目，需要每次都选择最早结束的电影
+2.	#include <stdio.h>
+	#include <stdlib.h>
+	#include<math.h>
+	struct zu{
+		int c,a,b;
+		int flag;
+	};
+	int max(int a,int b);
+	/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+	
+	int main() {
+		int n;
+		int m;
+	
+		scanf("%d",&n);
+		int i;
+		for(i=0;i<n;i++){
+		scanf("%d",&m);
+			int count=0;
+			int k;
+				struct zu p,q[200];
+			for (k=0;k<200;k++){
+				q[k].flag=0;
+			}
+			for(k=0;k<m;k++){
+				scanf("%d%d",&q[k].a,&q[k].b);
+				q[k].a=(q[k].a+1)/2;
+				q[k].b=(q[k].b+1)/2;
+				int t=max(q[k].a,q[k].b);
+				int qqq=q[k].a+q[k].b-t;
+				q[k].a=qqq;
+				q[k].b=t;
+				q[k].c=abs(q[k].a-q[k].b);
+				
+			}
+			int j,w;
+			for (j=0;j<m;j++){
+				for (w=0;w<m-1-j;w++){
+					if(q[w].a>q[w+1].a){
+						p=q[w];
+						q[w]=q[w+1];
+						q[w+1]=p;
+					}
+				}
+			}
+	
+		
+	int count1=0;
+			int sum;
+			while(1){
+				int k=0;
+				
+			   for (k=0;k<m;k++)
+			   if(q[k].flag==0&&sum+q[k].c<=200&&sum<q[k].a){
+			   	sum=q[k].b;
+			   	q[k].flag=1;
+			   	count1++;
+			   }
+			   count=count+10;
+			   sum=0;
+			   if(count1==m)
+			   break;
+			   
+			}
+			printf("%d\n",count);
+			}
+			
+			
+			
+			
+		
+		return 0;
+	}
+	
+	int max(int a,int b){
+		if (a>b) return a;
+		else return b;
+	}

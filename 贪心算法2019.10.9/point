@@ -1,12 +1,21 @@
 1.Fat Mouse：http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1001&ojid=0&cid=13365&hide=1&problem=Problem%20%20A
-	        背包问题：在允许的情况下，尽量选择单位价值高的
+	背包问题：在允许的情况下，尽量选择单位价值高的  	https://paste.ubuntu.com/p/2yJq8nYNfH/
                    使用结构体，完成排序
-          冒泡排序： for ( j=0;j<=i;j++){
-			              for ( k=0;k<=i-j-1;k++){
-			                    	if(c[k]<c[k+1]){
-				                      	t=c[k];
-			                      		c[k]=c[k+1];
-			                      		c[k+1]=t;}}}
+	冒泡排序： for ( j=0;j<=i;j++){
+			for ( k=0;k<=i-j-1;k++){
+			        if(c[k]<c[k+1]){
+				        t=c[k];
+			                c[k]=c[k+1];
+			                c[k+1]=t;}}}
+
+
 2.Moving table(HDOJ1050):http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1002&ojid=0&cid=13365&hide=1&problem=Problem%20%20B
-          ①涂色问题：计算某条路被经过的次数！！！！
-          ②电视问题：每一次都希望尽量多搬几张，则最终能最短搬完，则类似于想看最多的节目，需要每次都选择最早结束的电影
+		
+	①涂色问题：计算某条路被经过的次数！！！！
+	  	    https://paste.ubuntu.com/p/Q2gkZWV5jY/
+	②电视问题：每一次都希望尽量多搬几张，则最终能最短搬完，则类似于想看最多的节目，需要每次都选择最早结束的电影
+	  	    https://paste.ubuntu.com/p/sFJy4rxxfG/
+
+
+3.doing homework(HDOJ):http://acm.hdu.edu.cn/webcontest/contest_showproblem.php?pid=1003&ojid=0&cid=13365&hide=1&problem=Problem%20%20C
+		
